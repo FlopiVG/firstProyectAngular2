@@ -1,0 +1,25 @@
+{
+  "name": "firstproject",
+  "version": "1.0.0",
+  "description": "My first Angular2 project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlopiVG/firstProyectAngular2.git"
+  },
+  "keywords": [
+    "Angular2",
+    "begining",
+    "start",
+    "learn"
+  ],
+  "author": "Flopi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlopiVG/firstProyectAngular2/issues"
+  },
+  "homepage": "https://github.com/FlopiVG/firstProyectAngular2#readme"
+}
