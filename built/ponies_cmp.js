@@ -8,26 +8,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var races_cmp_1 = require('./races_cmp');
-var ponies_cmp_1 = require('./ponies_cmp');
-var PonyRacerApp = (function () {
-    function PonyRacerApp() {
+var PoniesCmp = (function () {
+    function PoniesCmp() {
+        this.ponies = [{ name: 'Rainbow Dash' }, { name: 'Pinkie Pie' }];
     }
-    PonyRacerApp.prototype.onNewRace = function () {
-        // add a flashy message for the user.
+    PoniesCmp.prototype.refreshPonies = function () {
+        this.ponies = [{ name: 'Fluttershy' }, { name: 'Rarity' }];
     };
-    PonyRacerApp = __decorate([
+    PoniesCmp = __decorate([
         core_1.Component({
-            selector: 'ponyracer-app',
-            // added the RacesCmp component
-            template: "\n        <h1>PonyRace</h1>\n        <races-cmp (newRaceAvailable)='onNewRace()'></races-cmp>\n        <ponies-cmp></ponies-cmp>\n    ",
-            // declare all the components you use in your template
-            directives: [races_cmp_1.RacesCmp, ponies_cmp_1.PoniesCmp]
+            selector: 'ponies-cmp',
+            template: "\n        <ul>\n            <button (click)=\"refreshPonies()\">Refresh</button>\n            <li *ngFor=\"#pony of ponies; #isEven=even\" [style.color]=\"isEven ? 'green' : 'black'\">\n                {{pony.name}}\n            </li>\n        </ul>\n    "
         }), 
         __metadata('design:paramtypes', [])
-    ], PonyRacerApp);
-    return PonyRacerApp;
+    ], PoniesCmp);
+    return PoniesCmp;
 })();
-exports.PonyRacerApp = PonyRacerApp;
-//end:users-cmp[] 
-//# sourceMappingURL=ponyracer_app.js.map
+exports.PoniesCmp = PoniesCmp;
+//# sourceMappingURL=ponies_cmp.js.map

@@ -8,26 +8,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var races_cmp_1 = require('./races_cmp');
-var ponies_cmp_1 = require('./ponies_cmp');
-var PonyRacerApp = (function () {
-    function PonyRacerApp() {
+var RacesCmp = (function () {
+    function RacesCmp() {
+        this.races = [{ name: 'London' }, { name: 'Lyon' }];
     }
-    PonyRacerApp.prototype.onNewRace = function () {
-        // add a flashy message for the user.
-    };
-    PonyRacerApp = __decorate([
+    RacesCmp = __decorate([
         core_1.Component({
-            selector: 'ponyracer-app',
-            // added the RacesCmp component
-            template: "\n        <h1>PonyRace</h1>\n        <races-cmp (newRaceAvailable)='onNewRace()'></races-cmp>\n        <ponies-cmp></ponies-cmp>\n    ",
-            // declare all the components you use in your template
-            directives: [races_cmp_1.RacesCmp, ponies_cmp_1.PoniesCmp]
+            selector: 'races-cmp',
+            template: "\n        <div *ngIf=\"races.length > 0\">\n            <h2>Races</h2>\n            <ul>\n                <li *ngFor=\"#race of races; #i=index\">{{i}} - {{race.name}}</li>  \n            </ul>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
-    ], PonyRacerApp);
-    return PonyRacerApp;
+    ], RacesCmp);
+    return RacesCmp;
 })();
-exports.PonyRacerApp = PonyRacerApp;
-//end:users-cmp[] 
-//# sourceMappingURL=ponyracer_app.js.map
+exports.RacesCmp = RacesCmp;
+//# sourceMappingURL=races_cmp.js.map
