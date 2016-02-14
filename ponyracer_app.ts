@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
-import {RacesCmp} from './races_cmp';
-import {PoniesCmp} from './ponies_cmp';
+import {RacesCmp} from './components/races_cmp';
+import {PoniesCmp} from './components/ponies_cmp';
 import {RaceService} from './services/race_service';
 
 @Component({
