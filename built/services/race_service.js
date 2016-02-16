@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var http_1 = require('angular2/http');
+var Observable_1 = require('rxjs/Observable');
 var RaceService = (function () {
     function RaceService(_http) {
         this._http = _http;
@@ -18,10 +19,22 @@ var RaceService = (function () {
     };
     RaceService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [http_1.Http])
     ], RaceService);
     return RaceService;
-    var _a;
 })();
 exports.RaceService = RaceService;
+var FakeRaceService = (function () {
+    function FakeRaceService() {
+    }
+    FakeRaceService.prototype.list = function () {
+        return Observable_1.Observable.of([{ name: 'London' }]);
+    };
+    FakeRaceService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], FakeRaceService);
+    return FakeRaceService;
+})();
+exports.FakeRaceService = FakeRaceService;
 //# sourceMappingURL=race_service.js.map

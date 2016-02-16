@@ -8,12 +8,9 @@ import {RaceService} from './services/race_service';
     // added the RacesCmp component
     template: `
         <h1>PonyRace</h1>
-        <races-cmp (newRaceAvailable)='onNewRace()'></races-cmp>
-        <ponies-cmp></ponies-cmp>
-        
     `,
     // declare all the components you use in your template
-    directives: [RacesCmp, PoniesCmp]
+    directives: []
 })
 export class PonyRacerApp{
     
