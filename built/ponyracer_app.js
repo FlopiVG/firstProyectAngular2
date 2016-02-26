@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('angular2/core');
 var race_service_1 = require('./services/race_service');
+var register_form_cmp_1 = require('./components/register-form-cmp');
 var PonyRacerApp = (function () {
     function PonyRacerApp(_raceService) {
         this._raceService = _raceService;
@@ -23,9 +24,9 @@ var PonyRacerApp = (function () {
         core_1.Component({
             selector: 'ponyracer-app',
             // added the RacesCmp component
-            template: "\n        <h1>PonyRace</h1>\n    ",
+            template: "\n        <register-form-cmp></register-form-cmp>\n    ",
             // declare all the components you use in your template
-            directives: []
+            directives: [register_form_cmp_1.RegisterFormCmp]
         }), 
         __metadata('design:paramtypes', [race_service_1.RaceService])
     ], PonyRacerApp);

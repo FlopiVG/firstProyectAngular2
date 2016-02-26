@@ -1,0 +1,21 @@
+<h2>Sign up</h2>
+<!-- we use a local variable #useForm -->
+<!-- and give its value to the register method  -->
+<form (ngSubmit)="register()" [ngFormModel]="userForm">
+    <div>
+        <label>Username</label><input ngControl="username">
+        <div *ngIf="username.dirty && username.hasError('required')">Username is required</div>
+    </div>
+    <div>
+        <label>Password</label><input ngControl="password" type="password">
+        <div *ngIf="password.dirty && password.hasError('required')">Password is required</div>
+    </div>
+    <div>
+        <label>Birth date</label><input type="date" ngControl="birthdate">
+        <div *ngIf="birthdate.dirty">
+            <div *ngIf="birthdate.hasError('required')">Birth date is required</div>
+            <div *ngIf="birthdate.hasError('tooYoung')">You're way too young to be betting on pony races</div>
+        </div>
+    </div>
+    <button type="submit" [disabled]="!userForm.valid">Register</button>
+</form>
