@@ -8,27 +8,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('angular2/core');
-var race_service_1 = require('./services/race_service');
-var register_form_cmp_1 = require('./components/register-form-cmp');
+var http_1 = require('angular2/http');
 var PonyRacerApp = (function () {
-    function PonyRacerApp(_raceService) {
-        this._raceService = _raceService;
+    function PonyRacerApp(http) {
+        this.http = http;
+        http.get("http://validate.jsontest.com/?json=%5BJSON-code-to-validate%5D")
+            .subscribe(function (response) {
+            console.log(response.json());
+        });
     }
-    PonyRacerApp.prototype.list = function () {
-        return this._raceService.list();
-    };
-    PonyRacerApp.prototype.onNewRace = function () {
-        // add a flashy message for the user.
-    };
     PonyRacerApp = __decorate([
         core_1.Component({
             selector: 'ponyracer-app',
             // added the RacesCmp component
-            template: "\n        <register-form-cmp></register-form-cmp>\n    ",
+            template: "\n        <h1>PonyRacer</h1>\n    ",
             // declare all the components you use in your template
-            directives: [register_form_cmp_1.RegisterFormCmp]
+            directives: []
         }), 
-        __metadata('design:paramtypes', [race_service_1.RaceService])
+        __metadata('design:paramtypes', [http_1.Http])
     ], PonyRacerApp);
     return PonyRacerApp;
 })();
